@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  color: white;
+  
+  margin-bottom: 40px;
+}
+
+.equipo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px; /* separación entre miembros */
+}
+
+.miembro {
+  position: relative;
+  width: 180px;
+  height: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  transform-origin: center;
+  background: #1a1a1a;
+  text-align: center;
+  color: white;
+}
+
+.miembro:hover {
+  transform: scale(1.1);
+}
+
+.miembro img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.marco {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: 270px;
+  border-radius: 20px;
+  z-index: -1;
+  animation: brillar 3s infinite ease-in-out;
+  transition: transform 0.5s ease;
+}
+
+.miembro:hover .marco {
+  transform: scale(1.1);
+}
+
+.nombre {
+  margin-top: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+}
+
+.descripcion {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.4s;
+  color: #fff;
+}
+
+.miembro:hover .descripcion {
+  opacity: 1;
+}
+
+/* Colores personalizados */
+.celeste .marco {
+  background: radial-gradient(circle, #00cfff 30%, transparent 70%);
+  box-shadow: 0 0 20px #00cfff, 0 0 40px #00cfff;
+}
+
+.rosa .marco {
+  background: radial-gradient(circle, #ffb6c1 30%, transparent 70%);
+  box-shadow: 0 0 20px #ffb6c1, 0 0 40px #ffb6c1;
+}
+
+.rojo .marco {
+  background: radial-gradient(circle, #ff0000 30%, transparent 70%);
+  box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+}
+
+.verde .marco {
+  background: radial-gradient(circle, #00ff00 30%, transparent 70%);
+  box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+}
+
+@keyframes brillar {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
